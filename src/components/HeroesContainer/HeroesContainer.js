@@ -1,25 +1,20 @@
 import React, { useState, useEffect } from "react";
-import openDOTA from "../../services/api";
+import fetchHeroStats from "../../helper/fetchHeroes";
+import GridView from "../GridView/GridView";
 
 const HeroesContainer = () => {
   const [viewType, setViewType] = useState("grid");
   const [heroesList, setHeroesList] = useState([]);
   useEffect(() => {
-    fetchData();
+    setHeroesList(fetchHeroStats());
+    console.log(heroesList);
   }, []);
 
-  const fetchData = () => {
-    openDOTA
-      .get("/heroes")
-      .then((response) => {
-        if (response.data.length > 0) {
-          setHeroesList(response.data);
-        }
-      })
-      .catch((error) => console.log(error));
-  };
-
-  return <div>{viewType}</div>;
+  return (
+    <div>
+      <GridView heroesList={heroesList} />
+    </div>
+  );
 };
 
 export default HeroesContainer;

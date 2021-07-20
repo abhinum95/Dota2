@@ -1,0 +1,28 @@
+.hero-container {
+  text-align: center;
+  display: inline-block;
+  border: 2px solid;
+  border-radius: 2rem;
+  max-width: 240px;
+  overflow: hidden;
+}
+
+.background-overlay {
+  height: 200px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.int {
+  border-color: blue;
+}
+
+.str {
+  border-color: red;
+}
+
+.agi {
+  border-color: darkgreen;
+}
