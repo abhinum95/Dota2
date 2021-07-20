@@ -1,28 +1,91 @@
 .hero-container {
   text-align: center;
   display: inline-block;
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 2rem;
-  max-width: 240px;
+  max-width: 11rem;
   overflow: hidden;
+  padding: 1rem;
+  margin: 1rem;
+  font-weight: 400;
+  font-size: 0.75rem;
 }
 
-.background-overlay {
-  height: 200px;
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.hero-name {
+  margin: 0px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.hero-img {
+  height: 5.6rem;
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  border-radius: 1rem;
+}
+
+.img-container {
+  height: 6rem;
 }
 
 .int {
+  background-color: rgba(50, 50, 100, 0.5);
   border-color: blue;
 }
 
 .str {
+  background-color: rgba(100, 50, 50, 0.5);
   border-color: red;
 }
 
 .agi {
+  background-color: rgba(50, 100, 50, 0.5);
   border-color: darkgreen;
+}
+
+.roles {
+  font-weight: 200;
+  height: 2rem;
+}
+
+.hp-bar {
+  width: 100%;
+  background-color: rgba(100, 200, 100, 0.5);
+  border-radius: 0.4rem;
+}
+
+.hp-bar span {
+  display: inline-block;
+  float: right;
+  margin: 0 0.2rem;
+}
+
+.mana-bar {
+  width: 100%;
+  background-color: rgba(50, 50, 200, 0.5);
+  border-radius: 0.4rem;
+}
+
+.mana-bar span {
+  display: inline-block;
+  float: right;
+  margin: 0 0.2rem;
+}
+
+.additional-info {
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.attribute-icon {
+  height: 0.75rem;
+  width: 0.75rem;
 }

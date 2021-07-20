@@ -1,19 +1,3 @@
-import { extract } from "jest-docblock";
-import openDOTA from "../services/api";
-
-let heroesList;
-
-const fetchHeroStats = () => {
-  openDOTA
-    .get("/heroStats")
-    .then((response) => {
-      console.log(response.data);
-      heroesList = response.data.map((heroDetails) => extractData(heroDetails));
-    })
-    .catch((error) => console.log(error));
-  return heroesList;
-};
-
 const extractData = (heroDetails) => {
   return {
     herald_pick: heroDetails["1_pick"],
@@ -68,4 +52,26 @@ const extractData = (heroDetails) => {
   };
 };
 
-export default fetchHeroStats;
+const getRolesString = (rolesArr) => rolesArr.join(", ");
+
+const getStartingHP = (base_str, base_hp, heroType) =>
+  Math.floor(
+    heroType === "str" ? base_str * 22.5 + base_hp : base_str * 18 + base_hp
+  );
+const getStartingHPRegen = (base_hp_regen, base_str) =>
+  (base_hp_regen + base_str / 10).toFixed(2);
+const getStartingMP = (base_int, base_mp, heroType) =>
+  Math.floor(
+    heroType === "int" ? base_int * 15 + base_mp : base_int * 12 + base_mp
+  );
+const getStartingMPRegen = (base_mp_regen, base_int) =>
+  (base_mp_regen + base_int / 20).toFixed(2);
+
+export {
+  extractData,
+  getRolesString,
+  getStartingHP,
+  getStartingHPRegen,
+  getStartingMP,
+  getStartingMPRegen,
+};

@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from "react";
-import fetchHeroStats from "../../helper/fetchHeroes";
+import openDOTA from "../../axios/axios";
+import { extractData } from "../../helper/helper";
 import GridView from "../GridView/GridView";
 
 const HeroesContainer = () => {
   const [viewType, setViewType] = useState("grid");
   const [heroesList, setHeroesList] = useState([]);
   useEffect(() => {
-    setHeroesList(fetchHeroStats());
-    console.log(heroesList);
+    fetchHeroStats();
   }, []);
 
+  const fetchHeroStats = async () => {
+    let result;
+    await openDOTA
+      .get("/heroStats")
+      .then((response) => {
+        result = response.data.map((heroDetails) => extractData(heroDetails));
+        setHeroesList(result);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
-    <div>
+    <div className="heroesContainer">
       <GridView heroesList={heroesList} />
     </div>
   );
