@@ -63,7 +63,7 @@
 }
 
 .hp-bar span {
-  display: inline-block;
+  /* display: inline-block; */
   float: right;
   margin: 0 0.2rem;
 }
@@ -75,7 +75,7 @@
 }
 
 .mana-bar span {
-  display: inline-block;
+  /* display: inline-block; */
   float: right;
   margin: 0 0.2rem;
 }

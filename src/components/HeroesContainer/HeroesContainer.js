@@ -4,7 +4,7 @@ import { extractData } from "../../helper/helper";
 import GridView from "../GridView/GridView";
 
 const HeroesContainer = () => {
-  const [viewType, setViewType] = useState("grid");
+  // const [viewType, setViewType] = useState("grid");
   const [heroesList, setHeroesList] = useState([]);
   useEffect(() => {
     fetchHeroStats();

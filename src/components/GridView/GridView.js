@@ -24,7 +24,7 @@ const GridView = ({ heroesList = [] }) => {
             <img
               className="hero-img"
               src={baseUrl + hero.img}
-              alt={`${hero.localized_name} picture`}
+              alt={`${hero.localized_name}`}
             />
           </div>
           <div className="hp-bar">
