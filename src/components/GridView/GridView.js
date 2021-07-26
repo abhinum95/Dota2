@@ -6,6 +6,8 @@ import {
   getStartingMP,
   getStartingMPRegen,
 } from "../../helper/helper";
+import { agiIconSrc, intIconSrc, strIconSrc } from "../../constants";
+import AttributeBar from "../AttributeBar/AttributeBar";
 import "./GridView.css";
 
 const GridView = ({ heroesList = [] }) => {
@@ -41,30 +43,24 @@ const GridView = ({ heroesList = [] }) => {
           <p>{hero.attack_type}</p>
           <div className="roles">{getRolesString(hero.roles)}</div>
           <div className="additional-info">
-            <div>
-              <img
-                src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png"
-                className="attribute-icon"
-                alt="Strength Icon"
-              />{" "}
-              {hero.base_str} + {hero.str_gain}
-            </div>
-            <div>
-              <img
-                src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_agility.png"
-                className="attribute-icon"
-                alt="Agility Icon"
-              />{" "}
-              {hero.base_agi} + {hero.agi_gain}
-            </div>
-            <div>
-              <img
-                src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png"
-                className="attribute-icon"
-                alt="Intelligence Icon"
-              />{" "}
-              {hero.base_int} + {hero.int_gain}
-            </div>
+            <AttributeBar
+              imgSrc={strIconSrc}
+              attribBase={hero.base_str}
+              attribGain={hero.str_gain}
+              alt="Strength Gain"
+            />
+            <AttributeBar
+              imgSrc={agiIconSrc}
+              attribBase={hero.base_agi}
+              attribGain={hero.agi_gain}
+              alt="Agility Gain"
+            />
+            <AttributeBar
+              imgSrc={intIconSrc}
+              attribBase={hero.base_int}
+              attribGain={hero.int_gain}
+              alt="Intelligence Gain"
+            />
           </div>
         </article>
       ))}
