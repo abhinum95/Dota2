@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import openDOTA from "../../axios/axios";
+import openDOTA from "../../services/heroes";
 import { extractData } from "../../helper/helper";
 import GridView from "../GridView/GridView";
 
