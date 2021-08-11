@@ -10,6 +10,7 @@ import AdditionalInfo from "../AdditionalInfo/AdditionalInfo";
 import "./GridView.css";
 
 const GridView = ({ heroesList = [] }) => {
+  console.log(heroesList);
   let baseUrl = "https://api.opendota.com";
   return (
     <section className="grid-container">
