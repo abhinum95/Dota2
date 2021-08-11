@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import openDOTA from "../../services/heroes";
 import { extractData } from "../../helper/helper";
 import GridView from "../GridView/GridView";
+import SearchBar from "../SearchBar/SearchBar";
 
 const HeroesContainer = () => {
   // const [viewType, setViewType] = useState("grid");
@@ -32,6 +33,7 @@ const HeroesContainer = () => {
 
   return (
     <div className="heroesContainer">
+      <SearchBar />
       <GridView heroesList={heroesList} />
     </div>
   );
